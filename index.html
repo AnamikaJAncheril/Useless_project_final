@@ -3,61 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coconut Tree Love</title>
+  <title>CocoMood++</title>
   <style>
     body {
       margin: 0;
-      background-color: #fff7e6; /* Light warm background */
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      padding: 0;
+      font-family: 'Comic Sans MS', 'Courier New', cursive;
+      color: #fff;
+      background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3dhaXF5cnNnaWtnMzZvNXNkdm5qbmw3cnBmd3dzMDZhOGZjbmxxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/i6BsWXxUSHp7amMJS3/giphy.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
+
     .container {
-      background-color: #fff3cd; /* Pale yellow */
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 30px 20px;
-      border: 2px dashed #d49f34;
-      border-radius: 20px;
+      padding: 80px 40px;
+      margin: 100px;
+      border-radius: 25px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
       text-align: center;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #cf2a27;
+
+    .tagline {
+      text-align: center;
+      font-style: italic;
+      margin-top: -10px;
+      font-size: 1.2em;
     }
-    img {
-      width: 350px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 25px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-      animation: shake 3s infinite alternate;
-      margin: 20px auto;
-      display: block;
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6em;
     }
-    @keyframes shake {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(1deg); }
-      100% { transform: rotate(-1deg); }
+
+    .btn {
+      margin: 20px 10px;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
-    .text {
-      margin-top: 30px;
-      font-size: 1.1em;
-      color: #654321;
-      line-height: 1.7;
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .yellow-btn {
+      background-color: #ffe066;
+      color: #5f370e;
+    }
+
+    .pink-btn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .love-btn {
+      background-color: #f28b82;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-style: italic;
+      color: #f3f3f3;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="text">
-      In the warm glow of the sun, the coconut tree finds its reason to live. 🌞🌴  
-      Without the sun’s love, it droops in silent sadness... and coconuts? Nowhere to be seen! 🥥💔  
-      But when they’re together — oh, what joy! Coconuts bloom, and so does their love.  
-      Truly, they are a sun-sational match made in the tropics! 😄❤️🌴
-    </div>
 
-    <h1>Happy Family ☀️🌴🥥</h1>
-    <img src="family.png" alt="Happy Coconut Family">
+  <h1>🌴 CocoMood++ 🌞</h1>
+  <p class="tagline">"Where Sun meets Soul, and coconuts are born."</p>
+
+  <div class="container">
+    <p>Welcome to the land of emotional coconut trees 🌴.<br>
+     They live for the warm kisses of the Sun 🌞, and without it… no coconuts are born. 😲</p>
+
+    <p>"Without the Sun, the coconut tree feels empty. Their love creates coconuts – the fruits of passion!" 💞🌴🌞</p>
+
+    <p>When the Sun disappears, the coconut tree falls into silence. No coconuts are produced, no joy, no hope.  
+    It starts to wither emotionally, waiting for its sunny soulmate to return.</p>
+
+    <p>"Without the Sun, I’m just a shadow with no purpose. I miss the warmth that gives me life." – Coconut Tree 🌴💔</p>
+
+    <button class="btn yellow-btn" onclick="window.location.href='mood.html'">🦁 Check Sun Mood</button>
+    <button class="btn pink-btn" onclick="window.location.href='horoscope.html'">🪐 Coconut Horoscope</button>
+    <button class="btn love-btn" onclick="window.location.href='red.html'">💗 Love Story</button>
   </div>
+
+  <footer>
+    
+  </footer>
+
 </body>
 </html>
