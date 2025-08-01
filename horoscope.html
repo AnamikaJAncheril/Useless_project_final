@@ -1,0 +1,221 @@
+<!-- Add this to the end of your horoscope.html file, just before </div> and </body> -->
+<!-- Below full version includes new Next button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coco Horoscope</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #FFF3B0, #FFDEDE);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: popUp 1s ease-out;
+    }
+
+    h1 {
+      color: #5C4033;
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: #444;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    img {
+      width: 250px;
+      margin: 20px auto;
+      display: block;
+      animation: jumpSway 3s infinite ease-in-out;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes jumpSway {
+      0%   { transform: translateY(0px) rotate(0deg); }
+      25%  { transform: translateY(-8px) rotate(-1deg); }
+      50%  { transform: translateY(0px) rotate(1deg); }
+      75%  { transform: translateY(-6px) rotate(-0.5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    .funny-msg {
+      font-style: italic;
+      margin-top: 20px;
+      background: #fff1c4;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffd70070;
+    }
+
+    .btn, .submit-btn, .next-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #FF9AA2;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover, .submit-btn:hover, .next-btn:hover {
+      background-color: #FF6F91;
+    }
+
+    .input-group {
+      margin: 20px 0;
+    }
+
+    input {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      margin: 5px;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      background-color: #A0D995;
+    }
+
+    .next-btn:hover {
+      background-color: #7FC87F;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🥥✨ Coco Horoscope ✨🥥</h1>
+
+    <div class="input-group">
+      <label for="date">Enter Date:</label>
+      <input type="date" id="date">
+      <label for="time">Enter Time:</label>
+      <input type="time" id="time">
+      <button class="submit-btn" onclick="generateHoroscope()">🌴 Reveal My Coco Fate</button>
+    </div>
+
+    <div id="horoscope" style="display: none;">
+      <img src="coconut_horoscope.jpg" alt="Coconut Horoscope" />
+
+      <p><strong>Date:</strong> <span id="displayDate"></span></p>
+      <p><strong>Coconut Sign:</strong> <span id="coconutSign">🌴♐</span></p>
+      <hr/>
+
+      <p><strong>🌤️ Weather Vibes:</strong> <span id="weatherMood"></span></p>
+      <p><strong>🔮 Prediction:</strong> <span id="coconutPrediction"></span></p>
+      <p><strong>💼 Career:</strong> <span id="careerAdvice"></span></p>
+      <p><strong>💖 Love Life:</strong> <span id="loveLife"></span></p>
+      <p><strong>🪐 Lucky Planet:</strong> Coconuturn</p>
+
+      <div class="funny-msg" id="funnyBlock"></div>
+
+      <button class="btn" onclick="alert('🌴 Cosmic coconuts are realigning… check back tomorrow for another forecast!')">
+        🔮 Check Again Tomorrow
+      </button>
+
+      <!-- ✅ NEW NEXT BUTTON TO red.html -->
+      <br />
+      <a href="red.html">
+        <button class="next-btn">➡️ Next</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function generateHoroscope() {
+      const dateInput = document.getElementById('date').value;
+      const timeInput = document.getElementById('time').value;
+      const displayDate = document.getElementById('displayDate');
+      const coconutSign = document.getElementById('coconutSign');
+      const horoscopeDiv = document.getElementById('horoscope');
+
+      if (!dateInput || !timeInput) {
+        alert("Please enter both date and time to get your coconut fate!");
+        return;
+      }
+
+      displayDate.textContent = `${dateInput} at ${timeInput}`;
+
+      const signs = [
+        "Tender Taurus 🥥♉", "Funky Leo 🥥♌", "Moody Pisces 🥥♓",
+        "Witty Coconutarius 🥥♐", "Bold Areekutty 🥥♈", "Juicy Virgo 🥥♍",
+        "Crazy Kopran 🥥♑", "Silly Scorpio 🥥♏", "Floating Libra 🥥♎",
+        "Salty Saggico 🥥♐", "Ripe Gemini 🥥♊", "Lazy Cancer-nut 🥥♋"
+      ];
+
+      const weatherMoods = [
+        "The sun is roasting your leaves. Hydrate emotionally.",
+        "Mild breeze is swaying your soul – dance like no one's harvesting!",
+        "Thunder is near, but you still smile like a sunbeam.",
+        "A perfect coconut tanning day. Stay juicy!"
+      ];
+
+      const predictions = [
+        "Your coconuts whisper secrets to the moon tonight.",
+        "You are more than a palm with fruit — you're a philosopher leaf.",
+        "Let your trunk stand tall in the face of bird drama.",
+        "You are spiritually synced with the tide today. Ride it!"
+      ];
+
+      const careers = [
+        "A squirrel will pitch a startup. Invest one nut only.",
+        "You might open a leaf-based design agency.",
+        "You’ll be hired as a coconut therapist. Qualifications? You’re adorable.",
+        "Avoid banana-led meetings. They are slippery."
+      ];
+
+      const loveLives = [
+        "Someone special winked at you from the mango side today. 👀",
+        "Banana trees may be jealous of your glow. Don’t dim it!",
+        "It’s a flirty day — even the sun has a crush on you.",
+        "Expect coconut compliments from a shy papaya."
+      ];
+
+      const funnies = [
+        "🌴 Don't overthink falling coconuts. Sometimes it's just gravity.",
+        "🌀 You might feel shaken, not stirred. Ride the coconut coaster.",
+        "🚨 Avoid deep convos with mangoes today. They’re emotional.",
+        "🥥 Reminder: You're a whole vibe, not just tree décor."
+      ];
+
+      coconutSign.textContent = signs[Math.floor(Math.random() * signs.length)];
+      document.getElementById("weatherMood").textContent = weatherMoods[Math.floor(Math.random() * weatherMoods.length)];
+      document.getElementById("coconutPrediction").textContent = predictions[Math.floor(Math.random() * predictions.length)];
+      document.getElementById("careerAdvice").textContent = careers[Math.floor(Math.random() * careers.length)];
+      document.getElementById("loveLife").textContent = loveLives[Math.floor(Math.random() * loveLives.length)];
+      document.getElementById("funnyBlock").innerHTML = funnies[Math.floor(Math.random() * funnies.length)];
+
+      horoscopeDiv.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
+

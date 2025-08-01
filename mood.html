@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CocoMood++</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #d1f5f0);
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #3b3b3b;
+      margin-bottom: 0.5em;
+    }
+    #sunlight-slider {
+      width: 60%;
+      margin: 20px auto;
+    }
+    #mood-message {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #333;
+    }
+    #sunlight-value {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #mood-gif {
+      width: 250px;
+      height: auto;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: none;
+    }
+    #mood-status {
+      font-size: 1.3em;
+      color: #555;
+      margin-top: 10px;
+    }
+    #gif-description {
+      margin-top: 10px;
+      font-style: italic;
+      white-space: pre-line;
+      color: #555;
+    }
+    .coconut-box {
+      background: #fff3e6;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    #coconut-count {
+      font-size: 2em;
+      color: #cc6600;
+    }
+    .next-arrow {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      background-color: #ffeecc;
+      border-radius: 30px;
+      color: #4d2e00;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+    .next-arrow:hover {
+      background-color: #ffcc88;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌴 sunnyMood++: 😎 “Powered by sunlight and silliness.”</h1>
+  <input type="range" id="sunlight-slider" min="0" max="100" value="50" />
+  <div id="sunlight-value">☀️ Sunlight: 50%</div>
+  <p id="mood-message">Detecting sunny mood...</p>
+  <img id="mood-gif" src="" alt="Mood GIF" />
+  <div id="mood-status"></div>
+  <p id="gif-description"></p>
+
+  <div class="coconut-box">
+    <h2>🥥 Total Coconuts Produced</h2>
+    <div id="coconut-count">0</div>
+  </div>
+
+  <!-- Next Button -->
+  <a href="horoscope.html" class="next-arrow">➡️ Next</a>
+
+  <script>
+    const slider = document.getElementById("sunlight-slider");
+    const sunlightValue = document.getElementById("sunlight-value");
+    const moodMessage = document.getElementById("mood-message");
+    const moodGif = document.getElementById("mood-gif");
+    const moodStatus = document.getElementById("mood-status");
+    const gifDescription = document.getElementById("gif-description");
+    const coconutCountText = document.getElementById("coconut-count");
+
+    function updateMood(value) {
+      sunlightValue.textContent = `☀️ Sunlight: ${value}%`;
+      moodGif.style.display = "block";
+      let quote = "";
+      let newCoconuts = 0;
+
+      if (value < 30) {
+        moodMessage.textContent = "🥶 Coconut's freezing! Not a sunbeam in sight. Even the tree is hugging itself.";
+        moodGif.src = "https://media.giphy.com/media/12VUBntdZjDEOI/giphy.gif";
+        moodStatus.innerHTML = "🌴 Current Coconut Status: <strong>Cold & Sleepy</strong>";
+        gifDescription.textContent = "Low vibes! This coconut is dreaming of warmer days and tropical hugs. Time to summon some rays! 🧣";
+        quote = "“Brrr... I’d rather be a snowball than a coconut right now...”";
+        newCoconuts = 0;
+      } else if (value < 70) {
+        moodMessage.textContent = "😌 Coconut is vibing in the shade, sipping on chilled juice. Life’s good!";
+        moodGif.src = "https://media.giphy.com/media/feUi7rCAqiZKQTAi2p/giphy.gif";
+        moodStatus.innerHTML = "🌴 Current Coconut Status: <strong>Relaxed & Content</strong>";
+        gifDescription.textContent = "Ahhh... This is paradise. Not too hot, not too cold. Your coconut is truly zen. 🌺🧘‍♂️";
+        quote = "“We’re chill... but still dropping some coconuts for ya!” 😎";
+        newCoconuts = Math.floor(Math.random() * 6 + 10); 
+      } else {
+        moodMessage.textContent = "🌞 Coconut is in full party mode! Dancing under the blazing sun like no one’s watching!";
+        moodGif.src = "https://media.giphy.com/media/jLfC1gJfqMyZO/giphy.gif";
+        moodStatus.innerHTML = "🌴 Current Coconut Status: <strong>Energetic & Glowing</strong>";
+        gifDescription.textContent = "Sun-soaked and loving it! Your coconut’s gone wild in the heat – someone crank the beach music! 🎉🥥";
+        quote = "“20+ coconuts incoming! I’m solar-powered and coconut-fueled!” 🔥";
+        newCoconuts = Math.floor(Math.random() * 11 + 20); 
+      }
+
+      coconutCountText.textContent = newCoconuts;
+      gifDescription.textContent += `\n\n🥥 Coconut says: ${quote}`;
+    }
+
+    slider.addEventListener("input", (e) => {
+      updateMood(e.target.value);
+    });
+
+    updateMood(slider.value);
+  </script>
+</body>
+</html>
+
