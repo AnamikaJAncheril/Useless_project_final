@@ -2,12 +2,14 @@ cocomood++ 🎯
 
 Basic Details
 Team Name: Me, Myself & Coconut 🌴
+
 Team Members:
 Just me – fueled by coconuts, code, and curiosity.
 Anamika J Ancheril – Mar Baselios Christian College of Engineering and Technology
 
 Project Description
 CocoMood++ is a light-hearted yet interactive web application that monitors the "mood" of a coconut tree based on sunlight levels and environmental factors. It responds with animated reactions, humorous GIFs, and even a daily horoscope just for coconuts — making sure our leafy friends feel seen and appreciated.
+
 The Problem (that doesn't exist)
 Coconut trees are the unsung heroes of our landscapes — standing tall, giving shade, and dropping coconuts with perfect aim.
 But beneath those swaying leaves lies an emotional struggle we’ve all ignored.'
@@ -92,7 +94,6 @@ A simple, fun love story between two coconut trees
 
 Just for entertainment and creativity
 
-Additional Demos
-[Add any extra demo materials/links]
+
 
 drive link https://drive.google.com/drive/u/0/folders/1nMa87USzF1JUueYzRZgxi6AtzUuDrn3N
